@@ -1,0 +1,142 @@
+
+package ds.lab.assignment2.bilalbatrouni;
+import java . lang .String;
+import java.lang.AbstractMethodError;
+
+class node {
+     static node a ;
+     static node b;
+     
+     String head ;
+     String tail ;
+     node next;
+}
+
+     class LinkedList { 
+
+	Node head; 
+        Node tail;
+	static Node a, b; 
+
+	
+	static class Node { 
+
+		String head;
+                String tail  ;
+		Node next; 
+
+		
+		Node(String h ) { 
+			head = h; 
+                        
+			next = null; 
+		} 
+
+        public String getHead() {
+            return head;
+        }
+
+        public String getTail() {
+            return tail;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+                
+
+        private Node() {
+            throw new UnsupportedOperationException("");
+        }
+                
+	} 
+
+	void printlist(Node node) { 
+		while (node != null) { 
+			System.out.print(node.head + " tail"); 
+			node = node.next; 
+		} 
+	} 
+
+	Node sortedmerge(Node node1,  Object t) { 
+		
+		 
+		if (node1 == null && tail == null) { 
+			return null; 
+		} 
+
+		 
+		Node res = null; 
+
+		 
+		while (node1 != null && tail != null) { 
+
+			 
+			if (node1.equals(a) > = node1.equals(b) )  { 
+				Node temp = node1.next; 
+				node1.next = res; 
+				res = node1; 
+				node1 = temp; 
+			} else { 
+				Node temp = tail.next; 
+				tail.next = res; 
+				res = tail; 
+				tail = temp; 
+			} 
+		} 
+
+		
+		while (node1 != null) { 
+			Node temp = node1.next; 
+			node1.next = res; 
+			res = node1; 
+			node1 = temp; 
+		} 
+
+		 
+		while (tail != null) { 
+			Node temp = tail.next; 
+			tail.next = res; 
+			res = tail; 
+			tail = temp; 
+		} 
+
+		return res; 
+
+	} 
+
+	public static void main(String[] args) { 
+
+		LinkedList list = new LinkedList(); 
+		Node result = null; 
+
+		
+		list.a = new Node(); 
+		
+
+		LinkedList.b = new Node(); 
+		
+		System.out.println("List a before merge :"); 
+		list.printlist(a); 
+		System.out.println(""); 
+		System.out.println("List b before merge :"); 
+		list.printlist(b); 
+
+		 
+		result = list.sortedmerge(a, b); 
+		System.out.println(""); 
+		System.out.println("Merged linked list : "); 
+		list.printlist(result); 
+
+	} 
+        
+	 
+	
+		 
+	
+
+} 
+
+
+
+ 
